@@ -23,7 +23,7 @@ const DeleteNewPatientComponent = () => {
 
     const ISBNValidator = async() => {
           await  axios
-                .post('http://localhost:3500/api/v1/patients/validate', { patient_id: patientInfo.patient_id })
+                .post('http://localhost:3600/api/v1/patients/validate', { patient_id: patientInfo.patient_id })
                 .then((response) => {
                  setpatientInfo({...patientInfo,
                     patient_id:response.data.patient_id,
@@ -49,7 +49,7 @@ const DeleteNewPatientComponent = () => {
         event.preventDefault();
 
         axios
-            .delete('http://localhost:3500/api/v1/patients',{data: patientInfo})
+            .delete('http://localhost:3600/api/v1/patients',{data: patientInfo})
             .then((response) => {
                     alert(`${patientInfo.name} is deleted successfully`);
                 window.location.href = '/';
