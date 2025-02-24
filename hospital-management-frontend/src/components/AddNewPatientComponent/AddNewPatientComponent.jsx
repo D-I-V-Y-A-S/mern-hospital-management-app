@@ -24,7 +24,7 @@ const AddNewPatientComponent = () => {
         event.preventDefault();
 
         axios
-            .post('http://localhost:3500/api/v1/patients', patientInfo)
+            .post('http://localhost:3600/api/v1/patients', patientInfo)
             .then((response) => {
                 if (response.data.acknowledged === true)
                     alert(`${patientInfo.name} is updated successfully`);
