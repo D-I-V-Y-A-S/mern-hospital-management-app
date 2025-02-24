@@ -24,7 +24,7 @@ const EditNewPatientComponent = () => {
 
     const ISBNValidator = async() => {
           await  axios
-                .post('http://localhost:3500/api/v1/patients/validate', { patient_id: patientInfo.patient_id })
+                .post('http://localhost:3600/api/v1/patients/validate', { patient_id: patientInfo.patient_id })
                 .then((response) => {
                     setpatientInfo({...patientInfo,
                         name: response.data.name,
@@ -49,7 +49,7 @@ const EditNewPatientComponent = () => {
         event.preventDefault();
 
         axios
-            .patch('http://localhost:3500/api/v1/patients', patientInfo)
+            .patch('http://localhost:3600/api/v1/patients', patientInfo)
             .then((response) => {
                 if (response.data.acknowledged === true)
                     alert(`${patientInfo.name} is updated successfully`);
