@@ -7,7 +7,7 @@ const GetAllPatientComponent = () => {
     const [patient, setpatient] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3500/api/v1/patients`)
+        axios.get(`http://localhost:3600/api/v1/patients`)
             .then(response => setpatient(response.data))
             .catch(error => console.log(error))
     }, [])
