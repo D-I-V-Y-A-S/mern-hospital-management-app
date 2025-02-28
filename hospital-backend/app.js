@@ -7,6 +7,8 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const patientsRouter = require('./routes/patientRoute')
 
+app.get('/',(req,res)=>{
+    res.status(200).send("Works!")}
 app.use(cors())
 app.use(express.json())
 
